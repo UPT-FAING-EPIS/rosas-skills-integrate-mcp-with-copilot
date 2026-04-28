@@ -130,3 +130,10 @@ def unregister_from_activity(activity_name: str, email: str):
     # Remove student
     activity["participants"].remove(email)
     return {"message": f"Unregistered {email} from {activity_name}"}
+
+
+# Dark mode preference endpoint
+@app.get("/api/preferences")
+def get_preferences():
+    """Get user display preferences including dark mode setting"""
+    return {"dark_mode": False, "theme": "light", "version": "1.0"}
